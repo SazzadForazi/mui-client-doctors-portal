@@ -1,19 +1,22 @@
 import './App.css';
 import {
-  BrowserRouter,
-  Routes,
-  Route
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import Appointment from './Pages/Home/Appointment/Appointment/Appointment';
+
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Home></Home>
-        <Routes>
-          <Route path="/about">
-            <Home></Home>
+
+      <Router>
+        <Switch>
+          <Route path="/appointment">
+            <Appointment></Appointment>
           </Route>
           <Route path="/home">
             <Home></Home>
@@ -21,8 +24,8 @@ function App() {
           <Route path="/">
             <Home></Home>
           </Route>
-        </Routes>
-      </BrowserRouter>
+        </Switch>
+      </Router>
     </div>
   );
 }
